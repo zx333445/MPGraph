@@ -55,7 +55,7 @@ def process_slide(slide_path,
 
         # 3. Optional: Extract and save physical patch tile images
         if save_tiles:
-            tiles_dir = os.path.join(output_dir, "images", slide_id)
+            tiles_dir = os.path.join(output_dir, "images")
             os.makedirs(tiles_dir, exist_ok=True)
             
             reader.save_tiles(
