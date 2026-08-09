@@ -77,7 +77,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="WSI Tissue Segmentation and Patch Coordinates Extraction")
     
     # Path arguments
-    parser.add_argument("--source", type=str, required=True, help="Path to the directory containing input WSI files")
+    parser.add_argument("--data_dir", type=str, required=True, help="Path to the directory containing input WSI files")
     parser.add_argument("--save_dir", type=str, required=True, help="Path to the directory where coordinates and outputs will be saved")
     parser.add_argument("--slide_ext", type=str, default=".svs", help="Extension of slide files (.tif, .svs, .ndpi, .czi).")
     
@@ -97,12 +97,12 @@ if __name__ == "__main__":
     os.makedirs(args.save_dir, exist_ok=True)
 
     slide_files = sorted([
-        os.path.join(args.source, f) for f in os.listdir(args.source) if f.endswith(ext)
+        os.path.join(args.data_dir, f) for f in os.listdir(args.data_dir) if f.endswith(ext)
     ])
 
     print("=" * 60)
     print(f"Total slides found: {len(slide_files)} (extension: '{ext}')")
-    print(f"Source Directory  : {args.source}")
+    print(f"Source Directory  : {args.data_dir}")
     print(f"Save Directory    : {args.save_dir}")
     print(f"Patch Configuration: size={args.patch_size}, level={args.patch_level}, max_bg={args.max_background}")
     print("=" * 60)
