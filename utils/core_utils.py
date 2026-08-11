@@ -381,7 +381,7 @@ def main_process(
     model: torch.nn.Module,
     criterion: torch.nn.Module,
     optimizer: torch.optim.Optimizer,
-    lr_scheduler: torch.optim.lr_scheduler._LRScheduler,
+    lr_scheduler: torch.optim.lr_scheduler.LRScheduler,
     dataloaders: Dict[str, DataLoader], # type: ignore
     num_epochs: int,
     use_tensorboard: bool,
