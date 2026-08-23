@@ -1,5 +1,8 @@
+import os
 import cv2
 import argparse
+import tempfile
+import torch
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
@@ -14,6 +17,7 @@ from PIL import Image, ImageOps
 import sys
 sys.path.append('../')
 from models.panther.model_panther import PANTHER
+from utils.file_utils import load_pkl, save_pkl
 
 
 colors1 = [
@@ -144,3 +148,32 @@ def visualize_categorical_heatmap(
 
     img = Image.fromarray(img)
     return img
+
+
+def load_panther_encoder(
+    cancer_type,
+    checkpoint_path,
+    in_dim = 1024,
+    n_proto = 8,
+    iter = 1
+):
+    all_prototypes = torch.load(checkpoint_path, weights_only=False)
+    prototype = all_prototypes[cancer_type]['proto']
+
+    with tempfile.NamedTemporaryFile(
+        suffix=".pkl",
+        delete=False
+    ) as f:
+        tmp_proto_path = f.name
+
+    save_pkl(tmp_proto_path, prototype)
+
+    panther_encoder = get_panther_encoder(
+        in_dim=in_dim,
+        p=n_proto,
+        proto_path=tmp_proto_path,
+        iter=iter
+    )
+
+    os.remove(tmp_proto_path)
+    return panther_encoder
