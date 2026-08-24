@@ -1,5 +1,4 @@
-
-
+# A generalizable framework for interpretable histopathology prognostic biomarker identification
 
 <img src='docs/main.jpg' width="1400px" align="center"/>
 
