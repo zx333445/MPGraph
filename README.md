@@ -3,7 +3,6 @@
 <img src='docs/main.jpg' width="1400px" align="center"/>
 
 
-
 ## Installation
 1. Install [Anaconda](https://www.anaconda.com/distribution/)
 
@@ -16,3 +15,6 @@ git clone https://github.com/zx333445/MPGraph.git
 ```shell
 conda env create -f env.yaml
 ```
+
+## Checkpoint Download
+The pretrained MPGraph model can be accessed from [here](https://drive.google.com/file/d/1ASLomY_9GHqK_bE42ovbJ-zpHOeY0jF2/view?usp=drive_link)
