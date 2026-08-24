@@ -18,3 +18,9 @@ conda env create -f env.yaml
 
 ## Checkpoint Download
 The pretrained MPGraph model can be accessed from [here](https://drive.google.com/file/d/1ASLomY_9GHqK_bE42ovbJ-zpHOeY0jF2/view?usp=drive_link)
+
+
+
+
+## Acknowledgements
+The project was built on many amazing repositories:[UNI](https://github.com/mahmoodlab/UNI) [CLAM](https://github.com/mahmoodlab/CLAM), and [PANTHER](https://github.com/mahmoodlab/PANTHER). We thank the authors and developers for their contributions.
