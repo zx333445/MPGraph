@@ -8,10 +8,9 @@
 ## Installation
 1. Install [Anaconda](https://www.anaconda.com/distribution/)
 
-2. Clone this reposity and cd into the directory:
+2. Clone this reposity:
 ```shell
-git clone https://github.com/zx33445/MPGraph.git
-cd MPGraph
+git clone https://github.com/zx333445/MPGraph.git
 ```
 
 3. Create conda environment and install dependencies:
