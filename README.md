@@ -23,4 +23,4 @@ The pretrained MPGraph model can be accessed from [here](https://drive.google.co
 
 
 ## Acknowledgements
-The project was built on many amazing repositories:[UNI](https://github.com/mahmoodlab/UNI) [CLAM](https://github.com/mahmoodlab/CLAM), and [PANTHER](https://github.com/mahmoodlab/PANTHER). We thank the authors and developers for their contributions.
+The code for **MPGraph** was adapted and inspired by many amazing repositories:[UNI](https://github.com/mahmoodlab/UNI) [CLAM](https://github.com/mahmoodlab/CLAM), and [PANTHER](https://github.com/mahmoodlab/PANTHER). We thank the authors and developers for their contributions.
