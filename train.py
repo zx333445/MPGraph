@@ -49,6 +49,7 @@ parser.add_argument('--em_iter', type=int, default=1, help='Number of iterations
 parser.add_argument('--tau', type=float, default=1.0)
 parser.add_argument('--out_type', type=str, default='allcat')
 parser.add_argument('--ot_eps', default=1.0, type=float, help='Strength for entropic constraint regularization for OT')
+parser.add_argument('--load_proto', type=bool, default=True, help='wether load kmeans prototypes')
 parser.add_argument('--proto_path', type=str, default=None, help='path to load pre-clustered prototypes')
 
 # Training arguments
