@@ -116,7 +116,7 @@ class Monitor_CIndex(EarlyStopping):
         torch.save(model.state_dict(), ckpt_name)
 
 
-def train_loop_survival(epoch, model, loader, optimizer, lr_scheduler, device, writer=None, loss_fn=None, reg_fn=None, lambda_reg=1e-4, gc=16):
+def train_loop_survival(epoch, model, loader, optimizer, lr_scheduler, device, writer=None, loss_fn=None, reg_fn=None, lambda_reg=1e-4, gc=64):
     '''one epoch training'''   
     model.train()
     train_loss = 0.

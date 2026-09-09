@@ -226,19 +226,19 @@ def main(args):
 
     print("========Preparing Model========")
     if args.mode == 'mil':
-        model = AttMIL(n_classes=4)
-        # model = TransMIL(n_classes=4)
-        # model = WiKG(n_classes=4)
-        # model = ILRA(n_classes=4)
+        model = AttMIL(n_classes=4, in_dim=args.in_dim)
+        # model = TransMIL(n_classes=4, in_dim=args.in_dim)
+        # model = WiKG(n_classes=4, dim_in=args.in_dim)
+        # model = ILRA(n_classes=4, feat_dim=args.in_dim)
     elif args.mode == 'gcn':
-        model = DeepGraphConv_Surv(n_classes=4)
-        # model = PatchGCN_Surv(n_classes=4)
+        model = DeepGraphConv_Surv(n_classes=4, num_features=args.in_dim)
+        # model = PatchGCN_Surv(n_classes=4, num_features=args.in_dim)
     elif args.mode == 'h2t':
-        model = IndivMLPEmb(n_classes=1, p=args.n_proto, in_dim=1024)
+        model = IndivMLPEmb(n_classes=1, p=args.n_proto, in_dim=args.in_dim)
     elif args.mode == 'panther':
-        model = IndivMLPEmb(n_classes=1, p=args.n_proto, in_dim=2049)
+        model = IndivMLPEmb(n_classes=1, p=args.n_proto, in_dim=2*args.in_dim+1)
     elif args.mode == 'mpgraph':
-        model = MPGraph_Surv(n_classes=1, p=args.n_proto)
+        model = MPGraph_Surv(n_classes=1, p=args.n_proto, input_dim=args.in_dim)
     model.to(device)
     print(model)
     print("========Model Done========")

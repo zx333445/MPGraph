@@ -82,9 +82,9 @@ args:
 """
 
 class AttMIL(nn.Module):
-    def __init__(self, gate = True, size_arg = "small", dropout = True, n_classes=4):
+    def __init__(self, gate = True, size_arg = "small", dropout = True, n_classes=4, in_dim=1024):
         super().__init__()
-        self.size_dict = {"small": [1024, 512, 256], "big": [1024, 512, 384]}
+        self.size_dict = {"small": [in_dim, 512, 256], "big": [in_dim, 512, 384]}
         size = self.size_dict[size_arg]
         fc = [nn.Linear(size[0], size[1]), nn.ReLU()]
         if dropout:
