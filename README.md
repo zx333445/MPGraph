@@ -22,7 +22,7 @@ The pretrained MPGraph model can be accessed from [here](https://drive.google.co
 
 ## Image Processing Pipeline
 ### Extract Tiles from Whole Slide Images
-This script extracts tissue patch coordinates and saves them into HDF5 format, `preprocess/tiler_coords.py`
+This script extracts tissue patch coordinates and saves them into HDF5 format, [tiler_coords.py](./preprocess/tiler_coords.py)
 following the [CLAM](https://github.com/mahmoodlab/CLAM) saving format for whole-slide image (WSI) processing.
 
 ```python
