@@ -22,8 +22,8 @@ The pretrained MPGraph model can be accessed from [here](https://drive.google.co
 
 ## Image Processing Pipeline
 ### Extract image patches from WSIs
-[tiler_coords.py](./preprocess/tiler_coords.py) This script extracts tissue patch coordinates and saves them into HDF5 format, 
-following the [CLAM](https://github.com/mahmoodlab/CLAM) saving format for whole-slide image (WSI) processing.
+Use [tiler_coords.py](./preprocess/tiler_coords.py) to extract tissue patch coordinates and saves them into HDF5 format, 
+which following the [CLAM](https://github.com/mahmoodlab/CLAM) saving format for whole-slide image (WSI) processing.
 
 Usage:
 ```python
@@ -39,7 +39,7 @@ python tiler_coords.py \
 
 ### Extract patches feature embeddings
 1. Download the pretrained model weights [UNI](https://huggingface.co/MahmoodLab/UNI), [Virchow2](https://huggingface.co/paige-ai/Virchow2), [CONCH](https://huggingface.co/MahmoodLab/CONCH), put it to yours *./ckpt_path* .
-
+2. Use [extract_features.py](./preprocess/extract_features.py) to extract patches embeddings
 
 
 
