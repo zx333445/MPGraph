@@ -20,7 +20,21 @@ conda env create -f env.yaml
 The pretrained MPGraph model can be accessed from [here](https://drive.google.com/file/d/1ASLomY_9GHqK_bE42ovbJ-zpHOeY0jF2/view?usp=drive_link)
 
 
+## Image Processing Pipeline
+### Extract Tiles from Whole Slide Images
+This script extracts tissue patch coordinates and saves them into HDF5 format, `preprocess/tiler_coords.py`
+following the [CLAM](https://github.com/mahmoodlab/CLAM) saving format for whole-slide image (WSI) processing.
 
+```python
+python tiler_coords.py \
+    --data_dir /path/to/wsis \
+    --coords_dir /path/to/coords \
+    --save_dir /path/to/output_features \
+    --model_name uni \
+    --ckpt_path /path/to/UNImodel.bin \
+    --slide_ext .svs \
+    --batch_size 128
+```
 
 ## Acknowledgements
 The code for **MPGraph** was adapted and inspired by many amazing repositories:[UNI](https://github.com/mahmoodlab/UNI), [CLAM](https://github.com/mahmoodlab/CLAM), and [PANTHER](https://github.com/mahmoodlab/PANTHER). We thank the authors and developers for their contributions.
