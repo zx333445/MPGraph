@@ -26,7 +26,7 @@ Use [tiler_coords.py](./preprocess/tiler_coords.py) to extract tissue patch coor
 which following the [CLAM](https://github.com/mahmoodlab/CLAM) saving format for whole-slide image (WSI) processing.
 
 Usage:
-```python
+```bash
 python tiler_coords.py \
     --data_dir /path/to/your/wsi_files \
     --save_dir /path/to/output \
@@ -41,6 +41,17 @@ python tiler_coords.py \
 1. Download the pretrained model weights [UNI](https://huggingface.co/MahmoodLab/UNI), [Virchow2](https://huggingface.co/paige-ai/Virchow2), [CONCH](https://huggingface.co/MahmoodLab/CONCH), put it to yours *./ckpt_path* .
 2. Use [extract_features.py](./preprocess/extract_features.py) to extract patches embeddings
 
+Usage:
+```bash
+python extract_features.py \
+    --data_dir /path/to/your/wsi_files \
+    --coords_dir /path/to/coords \
+    --save_dir /path/to/output_features \
+    --model_name uni /[uni,virchow2,conch,resnet50] \
+    --ckpt_path /path/to/weights \
+    --slide_ext .svs \
+    --batch_size 128
+```
 
 
 ## Acknowledgements
