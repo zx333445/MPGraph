@@ -38,8 +38,8 @@ python tiler_coords.py \
 ```
 
 #### 2. Extract patches feature embeddings
-I. Download the pretrained model weights [UNI](https://huggingface.co/MahmoodLab/UNI), [Virchow2](https://huggingface.co/paige-ai/Virchow2), [CONCH](https://huggingface.co/MahmoodLab/CONCH), put it to yours *./ckpt_path* .
-II. Use [extract_features.py](./preprocess/extract_features.py) to extract patches embeddings
+a. Download the pretrained model weights [UNI](https://huggingface.co/MahmoodLab/UNI), [Virchow2](https://huggingface.co/paige-ai/Virchow2), [CONCH](https://huggingface.co/MahmoodLab/CONCH), put it to yours *./ckpt_path* .
+b. Use [extract_features.py](./preprocess/extract_features.py) to extract patches embeddings
 
 Usage:
 ```bash
