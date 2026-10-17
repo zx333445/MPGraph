@@ -53,6 +53,9 @@ python extract_features.py \
     --batch_size 128
 ```
 
+## Patient-level Prediction & Prototype Visualization 
+Please refer to [MPGraph_Inference_and_Visualization.ipynb](./MPGraph_Inference_and_Visualization.ipynb) for a demonstration.
+
 
 ## Acknowledgements
 The code for **MPGraph** was adapted and inspired by many amazing repositories:[UNI](https://github.com/mahmoodlab/UNI), [CLAM](https://github.com/mahmoodlab/CLAM), and [PANTHER](https://github.com/mahmoodlab/PANTHER). We thank the authors and developers for their contributions.
