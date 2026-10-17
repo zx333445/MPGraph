@@ -21,20 +21,27 @@ The pretrained MPGraph model can be accessed from [here](https://drive.google.co
 
 
 ## Image Processing Pipeline
-### Extract Tiles from Whole Slide Images
-This script extracts tissue patch coordinates and saves them into HDF5 format, [tiler_coords.py](./preprocess/tiler_coords.py)
+### Extract image patches from WSIs
+[tiler_coords.py](./preprocess/tiler_coords.py) This script extracts tissue patch coordinates and saves them into HDF5 format, 
 following the [CLAM](https://github.com/mahmoodlab/CLAM) saving format for whole-slide image (WSI) processing.
 
+Usage:
 ```python
 python tiler_coords.py \
-    --data_dir /path/to/wsis \
-    --coords_dir /path/to/coords \
-    --save_dir /path/to/output_features \
-    --model_name uni \
-    --ckpt_path /path/to/UNImodel.bin \
+    --data_dir /path/to/your/wsi_files \
+    --save_dir /path/to/output \
     --slide_ext .svs \
-    --batch_size 128
+    --patch_size 256 \
+    --overlap 0 \
+    --patch_level 0 \
+    --max_background 0.4
 ```
+
+### Extract patches feature embeddings
+1. Download the pretrained model weights [UNI](https://huggingface.co/MahmoodLab/UNI), [Virchow2](https://huggingface.co/paige-ai/Virchow2), [CONCH](https://huggingface.co/MahmoodLab/CONCH), put it to yours *./ckpt_path* .
+
+
+
 
 ## Acknowledgements
 The code for **MPGraph** was adapted and inspired by many amazing repositories:[UNI](https://github.com/mahmoodlab/UNI), [CLAM](https://github.com/mahmoodlab/CLAM), and [PANTHER](https://github.com/mahmoodlab/PANTHER). We thank the authors and developers for their contributions.
